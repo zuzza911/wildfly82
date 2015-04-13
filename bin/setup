@@ -1,13 +1,6 @@
 #!/bin/bash -eu
 
-#case "$1" in
-#  -v|--version)
-#    version="$2"
-#esac
-
-# Create additional directories required by JBOSSAS
 mkdir -p ${OPENSHIFT_WILDFLY_DIR}/{pid,logs}
-#mkdir -p $OPENSHIFT_WILDFLY_DIR/usr/lib/jvm
 
 /sbin/iptables -t nat -I PREROUTING -p tcp -m tcp --dport 4949 -j REDIRECT --to-ports 9990
 /sbin/iptables -t nat -I PREROUTING -p tcp -m tcp --dport 4848 -j REDIRECT --to-ports 9993
@@ -24,8 +17,8 @@ service iptables save
 
 sed -i 's/opt\/repo:\/bin\/bash/opt\/repo\/home:\/bin\/bash/g' "/etc/passwd"
 
-if [ -d "/opt/repo/.ssh" ] ; then
-    mv /opt/repo/.ssh /opt/repo/home/
-fi
+[ -d "/opt/repo/.ssh" ] && mv /opt/repo/.ssh /opt/repo/home/;
 
-mv -f .profile .bash_profile .bash_history home;
+[ -f "/opt/repo/.profile" ] && mv /opt/repo/.profile /opt/repo/home/;
+[ -f "/opt/repo/.bash_profile" ] && mv /opt/repo/.bash_profile /opt/repo/home/;
+[ -f "/opt/repo/.bash_history" ] && mv /opt/repo/.bash_history /opt/repo/home/;
