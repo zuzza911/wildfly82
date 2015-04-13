@@ -16,8 +16,8 @@ sed -i s/mypassword/$keypass/ ${OPENSHIFT_WILDFLY_DIR}/versions/8.2/standalone/c
 
 sed -i 's/opt\/repo:\/bin\/bash/opt\/repo\/home:\/bin\/bash/g' "/etc/passwd"
 
-[ -d "/opt/repo/.ssh" ] && mv /opt/repo/.ssh /opt/repo/home/;
+if [ -d "/opt/repo/.ssh" ] ; then
+    mv /opt/repo/.ssh /opt/repo/home/
+fi
 
-[ -f "/opt/repo/.profile" ] && mv /opt/repo/.profile /opt/repo/home/;
-[ -f "/opt/repo/.bash_profile" ] && mv /opt/repo/.bash_profile /opt/repo/home/;
-[ -f "/opt/repo/.bash_history" ] && mv /opt/repo/.bash_history /opt/repo/home/;
+[ -f "/opt/repo/.bash_profile" ] && cp /opt/repo/.bash_profile /opt/repo/home/
