@@ -310,8 +310,6 @@ function start() {
       echo "$cartridge_type process failed to start"
       exit 2
     fi
-
-    #waitondeployments
   fi
 }
 
