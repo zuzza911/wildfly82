@@ -20,4 +20,6 @@ if [ -d "/opt/repo/.ssh" ] ; then
     mv /opt/repo/.ssh /opt/repo/home/
 fi
 
-[ -f "/opt/repo/.bash_profile" ] && cp /opt/repo/.bash_profile /opt/repo/home/
+[ -f "/opt/repo/.bash_profile" ] && cp /opt/repo/.bash_profile /opt/repo/home/ ;
+[ -f "/opt/repo/.bash_history" ] && cp /opt/repo/.bash_history /opt/repo/home/ ;
+[ -f "/opt/repo/.profile" ] && cp /opt/repo/.profile /opt/repo/home/ ;
