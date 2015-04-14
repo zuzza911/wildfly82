@@ -24,7 +24,7 @@ function getscanconfig() {
     count=0
     while [ ${count} -lt 4 ]; do
       controller="127.0.0.1:${OPENSHIFT_WILDFLY_MANAGEMENT_HTTPS_PORT}"
-      scanconfig=`$OPENSHIFT_WILDFLY_DIR/bin/tools/jboss-cli.sh -c --controller=${controller} "/subsystem=deployment-scanner/:read-resource(recursive=true)" 2>&1 || :`
+      scanconfig=`$OPENSHIFT_WILDFLY_DIR/bin/jboss-cli.sh -c --controller=${controller} "/subsystem=deployment-scanner/:read-resource(recursive=true)" 2>&1 || :`
       if [[ $scanconfig =~ '"outcome" => "success"' ]] ; then
         SCANCONFIG=$scanconfig
         return
