@@ -38,7 +38,7 @@
                 </authorization>
                 <server-identities>
                 <ssl>
-                    <keystore path="server.keystore" relative-to="jboss.server.config.dir" keystore-password="mypassword" alias="serverkey"/>
+                    <keystore path="server.keystore" relative-to="jboss.server.config.dir" keystore-password="theremustbethesslcertpass" alias="serverkey"/>
                 </ssl>
                 </server-identities>
             </security-realm>
