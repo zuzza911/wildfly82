@@ -18,10 +18,10 @@ sed -i s/theremustbethesslcertpass/$keypass/ ${OPENSHIFT_WILDFLY_DIR}/versions/$
 
 sed -i 's/opt\/repo:\/bin\/bash/opt\/repo\/home:\/bin\/bash/g' "/etc/passwd"
 
-if [ -d "/opt/repo/.ssh" ] ; then
+if [ -d "${OPENSHIFT_WILDFLY_DIR}/.ssh" ] ; then
     mv /opt/repo/.ssh /opt/repo/home/
 fi
 
-[ -f "/opt/repo/.bash_profile" ] && cp /opt/repo/.bash_profile /opt/repo/home/ ;
-[ -f "/opt/repo/.bash_history" ] && cp /opt/repo/.bash_history /opt/repo/home/ ;
-[ -f "/opt/repo/.profile" ] && cp /opt/repo/.profile /opt/repo/home/ ;
+[ -f "${OPENSHIFT_WILDFLY_DIR}/.bash_profile" ] && cp /opt/repo/.bash_profile /opt/repo/home/ ;
+[ -f "${OPENSHIFT_WILDFLY_DIR}/.bash_history" ] && cp /opt/repo/.bash_history /opt/repo/home/ ;
+[ -f "${OPENSHIFT_WILDFLY_DIR}/.profile" ] && cp /opt/repo/.profile /opt/repo/home/ ;
