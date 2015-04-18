@@ -22,6 +22,6 @@ if [ -d "${OPENSHIFT_WILDFLY_DIR}/.ssh" ] ; then
     mv /opt/repo/.ssh /opt/repo/home/
 fi
 
-[ -f "${OPENSHIFT_WILDFLY_DIR}/.bash_profile" ] && cp /opt/repo/.bash_profile /opt/repo/home/ ;
-[ -f "${OPENSHIFT_WILDFLY_DIR}/.bash_history" ] && cp /opt/repo/.bash_history /opt/repo/home/ ;
-[ -f "${OPENSHIFT_WILDFLY_DIR}/.profile" ] && cp /opt/repo/.profile /opt/repo/home/ ;
+[ -f "${OPENSHIFT_WILDFLY_DIR}/.bash_profile" ] && cp ${OPENSHIFT_WILDFLY_DIR}/.bash_profile /opt/repo/home/ ;
+[ -f "${OPENSHIFT_WILDFLY_DIR}/.bash_history" ] && cp ${OPENSHIFT_WILDFLY_DIR}/.bash_history /opt/repo/home/ ;
+[ -f "${OPENSHIFT_WILDFLY_DIR}/.profile" ] && cp ${OPENSHIFT_WILDFLY_DIR}/.profile /opt/repo/home/ ;
